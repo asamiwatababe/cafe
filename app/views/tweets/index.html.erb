@@ -7,6 +7,7 @@
         <li>
           <%= link_to 'Detail', tweet_path(tweet.id)%>
         </li>
+        <%if user_signed_in? && current_user.id == tweet.user_id %>
         <li>
           <%= link_to 'Edit', edit_tweet_path(tweet.id)%>
         </li>
