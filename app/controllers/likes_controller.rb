@@ -13,7 +13,7 @@ class LikesController < ApplicationController
         like = Like.find_by(tweet_id: params[:tweet_id], user_id: current_user.id)
         like.destroy
         respond_to do |format|
-            format.js
+          format.js
         end
     end
 

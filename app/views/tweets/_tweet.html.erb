@@ -1,4 +1,7 @@
 
+<div id="like-btn<%= tweet.id %>">
+    <%= render partial: "likes/like", locals: { tweet: tweet } %>
+</div>
 <div class="content_post" style="background-image: url(<%= tweet.image %>);">
   <div class="tweet__image">
     <%= image_tag tweet.image %>
@@ -20,9 +23,6 @@
       </ul>
     </div>
       <p><%= tweet.text %></p>
-    <div id="like-btn<%= tweet.id %>">
-    <%= render partial: "likes/like", locals: { tweet: tweet } %>
-    </div>
       <span class="name">
       </span>
 </div>
