@@ -1003,7 +1003,7 @@ form textarea {
   padding: 10px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
-  font-family: "游ゴシック", "YuGothic";
+  font-family: "Times New Roman", "YuGothic";
 }
 
 form input[type="submit"] {
@@ -1069,4 +1069,5 @@ footer p {
 
 .search-form .search-btn {
   width: 10%;
+  font-family: 'Times New Roman', cursive;
 }
