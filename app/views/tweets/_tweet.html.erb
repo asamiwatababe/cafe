@@ -1,9 +1,11 @@
-<div class="content_post"  >
-  <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-  <%= image_tag @tweet.image.variant(resize: '300x300'), class: 'tweet-image'  %>
+
+<div class="content_post" style="background-image: url(<%= tweet.image %>);">
+  <div class="tweet__image">
+    <%= image_tag tweet.image %>
+  </div>
     <div class="more">   
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
+      <span><%= image_tag 'arrow_top.png' %></span>
+      <ul class="more_list">
         <li>
           <%= link_to 'Detail', tweet_path(tweet.id)%>
         </li>
@@ -15,8 +17,8 @@
           <%= link_to 'Delete', tweet_path(tweet.id), data: { turbo_method: :delete } %>
         </li>
         <% end %>
-        </ul>
-      </div>
+      </ul>
+    </div>
       <p><%= tweet.text %></p>
       <span class="name">
       </span>
