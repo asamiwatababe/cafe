@@ -20,6 +20,13 @@
       </ul>
     </div>
       <p><%= tweet.text %></p>
+    <div id="like-btn<%= tweet.id %>">
+      <% if user_signed_in? && tweet.liked_by?(current_user)%>
+        <%=link_to "Liked", tweet_likes_path(tweet.id),  data: { turbo_method: :delete }, class: "tweet_likes" %>
+      <% else %>
+        <%=link_to "Like", tweet_likes_path(tweet.id), data: { turbo_method: :post }, class: "tweet_likes" %>
+      <% end %>
+    </div>
       <span class="name">
       </span>
 </div>
