@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
     before_action :set_tweet
+    before_action :authenticate_user!
 
     def create
         like = current_user.likes.build(tweet_id: params[:tweet_id])
