@@ -1,0 +1,28 @@
+
+<div id="like-btn<%= tweet.id %>">
+    <%= render partial: "likes/like", locals: { tweet: tweet } %>
+</div>
+<div class="content_post" style="background-image: url(<%= tweet.image %>);">
+  <div class="tweet__image">
+    <%= image_tag tweet.image %>
+  </div>
+    <div class="more">   
+      <span><%= image_tag 'arrow_top.png' %></span>
+      <ul class="more_list">
+        <li>
+          <%= link_to 'Detail', tweet_path(tweet.id)%>
+        </li>
+        <% if user_signed_in? && current_user.id == tweet.user_id %>
+        <li>
+          <%= link_to 'Edit', edit_tweet_path(tweet.id)%>
+        </li>
+        <li>
+          <%= link_to 'Delete', tweet_path(tweet.id), data: { turbo_method: :delete } %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+      <p><%= tweet.text %></p>
+      <span class="name">
+      </span>
+</div>

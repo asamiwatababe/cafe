@@ -1,0 +1,5 @@
+class RemoveImageFromTweets < ActiveRecord::Migration[7.0]
+  def change
+    remove_column :tweets, :image, :text
+  end
+end
